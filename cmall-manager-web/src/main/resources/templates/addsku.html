@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>交易平台后台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <style>
+        .layui-table-cell {
+            text-align: center;
+        }
+
+        td .layui-table-cell {
+            height: 100px;
+            line-height: 50px;
+        }
+
+        .layui-table img {
+            max-width: 100px
+        }
+    </style>
+
+</head>
+<body >
+<div class="layui-container" id="addAttr_mt">
+    <br>
+    <form class="layui-form" id="addsku_form">
+        <input type="hidden" name="id">
+        <div id="append_form">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><b>三级分类</b></label>
+                <div class="layui-input-inline">
+                    <select name="catalog3Id" lay-filter="catelog3Id_mk">
+                        <option id="catelog3_ch" value="111" selected>请选择</option>
+                    </select>
+                </div>
+
+
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><b>当前SPU</b></label>
+                <div class="layui-input-block">
+                    <select name="spuId" id="spuname" lay-search lay-filter="spunameId">
+                        <option id="spuId_ch" value="111" selected>请选择</option>
+                    </select>
+                </div>
+            </div>
+            <hr class="layui-bg-green">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><b>SKU名称</b></label>
+                <div class="layui-input-block">
+                    <input id="name_null" type="text" name="skuName" required lay-verify="required" placeholder="请输入SKU名称"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><b>商品价格</b></label>
+                <div class="layui-input-block">
+                    <input id="price_null" type="text" name="price" required lay-verify="required" placeholder="请输入商品价格"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><b>重量(千克)</b></label>
+                <div class="layui-input-block">
+                    <input id="weight_null" type="text" name="weight" required lay-verify="required" placeholder="请输入商品重量"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label"><b>商品规格</b></label>
+                <div class="layui-input-block">
+                <textarea id="skudescription_area" name="skuDesc" placeholder="请输入商品描述"
+                          class="layui-textarea"></textarea>
+                </div>
+            </div>
+        </div>
+
+<!--        <div class="layui-container">-->
+<!--            <button type="button" class="layui-btn layui-btn-normal" onclick="addAttrValue()">-->
+<!--                <i class="layui-icon layui-icon-addition"></i>添加属性值-->
+<!--            </button>-->
+<!--            <div class="layui-container" style=" text-align: center;">-->
+<!--                <table class="layui-table addAttrTable">-->
+<!--                    <colgroup>-->
+<!--                        <col>-->
+<!--                        <col width="200">-->
+<!--                    </colgroup>-->
+<!--                    <thead>-->
+<!--                    <tr>-->
+<!--                        <th><b>属性值名称</b></th>-->
+<!--                        <th><b>操作</b></th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody id="AttrValue_body">-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--                <button type="button" class="layui-btn layui-btn-normal" onclick="saveAttr()">-->
+<!--                    <i class="layui-icon layui-icon-addition"></i>保存-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </div>-->
+        <table class="layui-hide" id="skuImgList" lay-filter="skuList_filter"></table>
+    </form>
+</div>
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'table'], function () {
+        var form = layui.form, element = layui.element, layedit = layui.layedit, $ = layui.jquery, table = layui.table;
+        var upload = layui.upload;
+        var spuId = $("#spuId_ch").val()
+        console.log(spuId)
+
+    });
+
+</script>
+<script type="text/html" id="toolbarDemo">
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">设为默认图片</a>
+<!--    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
+</script>
+
+</body>
+
+</html>

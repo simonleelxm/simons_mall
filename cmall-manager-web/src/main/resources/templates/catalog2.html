@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>交易平台后台</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+</head>
+<body>
+<div>
+    <blockquote class="layui-elem-quote layui-quote-nm">
+        <span class="layui-breadcrumb">
+          <a href="/admin/welcome">首页</a>
+          <a href="">分类管理</a>
+          <a><cite>二级分类</cite></a>
+        </span>
+    </blockquote>
+</div>
+<div class="layui-container">
+    <form class="layui-form" action="">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><b>一级分类</b></label>
+            <div class="layui-input-inline">
+                <select name="catalog1" id="catelog1" lay-search lay-filter="catelog1Id">
+                    <option value="">请选择</option>
+                </select></div>
+        </div>
+<!--        <button type="button" class="layui-btn layui-btn-normal" onclick="addSpu()">-->
+<!--            <i class="layui-icon layui-icon-addition"></i>添加二级分类-->
+<!--        </button>-->
+    </form>
+    <table class="layui-hide" id="attrList" lay-filter="attrList_filter"></table>
+</div>
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+<script src="/layui/layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'table', 'element', 'upload'], function () {
+        var form = layui.form, element = layui.element, layedit = layui.layedit, $ = layui.jquery, table = layui.table;
+        var upload = layui.upload;
+
+        table.render({
+            elem: '#attrList'
+            , url:"/getCatalog2?catalog1Id=999"
+            , cols: [[
+                {type: 'numbers', width: 80, title: '序号'}
+                , {field: 'id', width: 80, title: 'ID'}
+                , {field: 'name', title: '分类名称'}
+                , {fixed: 'right', width: 210, align: 'center', toolbar: '#barDemo'}
+            ]]
+            , page: true
+            , toolbar: '#toolbarDemo'
+            , limits: [5, 10, 15] //显示
+            , limit: 10 //每页默认显示的数量
+            , parseData: function (res) { //res 即为原始返回的数据
+                return {
+                    "code": 0, //解析接口状态
+                    "msg": "", //解析提示文本
+                    "count": res.length, //解析数据长度
+                    "data": res //解析数据列表
+                };
+            }
+        });
+
+        //初始一级分类
+        $.ajax({
+            url: "/getCatalog1",
+            dataType: 'json',
+            type: "GET",
+            success: function (result) {
+                $.each(result, function (index, item) {
+                    $("#catelog1").append("<option value=" + item.id + ">" + item.name + "</option>")
+                });
+                form.render()
+            }
+        });
+
+        //一级分类
+        form.on('select(catelog1Id)', function (data) {
+            $.ajax({
+                url: "/getCatalog2?catalog1Id=" + data.value,
+                dataType: 'json',
+                type: "GET",
+                success: function (result) {
+                    table.render({
+                        elem: '#attrList'
+                        , data:result
+                        , cols: [[
+                            {type: 'numbers', width: 80, title: '序号'}
+                            , {field: 'id', width: 80, title: 'ID'}
+                            , {field: 'name', title: '分类名称'}
+                            , {fixed: 'right', width: 210, align: 'center', toolbar: '#barDemo'}
+                        ]]
+                        , page: true
+                        , toolbar: '#toolbarDemo'
+                        , limits: [5, 10, 15] //显示
+                        , limit: 10 //每页默认显示的数量
+                        , parseData: function (res) { //res 即为原始返回的数据
+                            return {
+                                "code": 0, //解析接口状态
+                                "msg": "", //解析提示文本
+                                "count": res.length, //解析数据长度
+                                "data": res //解析数据列表
+                            };
+                        }
+                    });
+                }
+            });
+        });
+
+    });
+</script>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="addData">添加二级分类</button>
+        <!--        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>-->
+        <!--        <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>-->
+    </div>
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+</body>
+
+</html>

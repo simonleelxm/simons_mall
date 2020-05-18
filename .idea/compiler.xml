@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cmall-item-web" />
+        <module name="cmall-cart-web" />
+        <module name="cmall-web-util" />
+        <module name="cmall-passport-web" />
+        <module name="cmall-order-service" />
+        <module name="cmall-payment" />
+        <module name="cmall-manager-web" />
+        <module name="cmall-service-util" />
+        <module name="cmall-search-web" />
+        <module name="cmall-user-service" />
+        <module name="cmall-order-web" />
+        <module name="cmall-api" />
+        <module name="cmall-manager-service" />
+        <module name="cmall-search-service" />
+        <module name="cmall-cart-service" />
+        <module name="cmall-user-web" />
+        <module name="cmall-common-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cmall-api" target="1.5" />
+      <module name="cmall-cart-service" target="1.8" />
+      <module name="cmall-cart-web" target="1.8" />
+      <module name="cmall-common-util" target="1.8" />
+      <module name="cmall-item-web" target="1.8" />
+      <module name="cmall-manager-service" target="1.8" />
+      <module name="cmall-manager-web" target="1.8" />
+      <module name="cmall-order-service" target="1.8" />
+      <module name="cmall-order-web" target="1.8" />
+      <module name="cmall-parent" target="1.8" />
+      <module name="cmall-passport-web" target="1.8" />
+      <module name="cmall-payment" target="1.8" />
+      <module name="cmall-payment-service" target="1.8" />
+      <module name="cmall-paymnet-web" target="1.8" />
+      <module name="cmall-search-service" target="1.8" />
+      <module name="cmall-search-web" target="1.8" />
+      <module name="cmall-service-util" target="1.8" />
+      <module name="cmall-user-service" target="1.8" />
+      <module name="cmall-user-web" target="1.8" />
+      <module name="cmall-web-util" target="1.8" />
+      <module name="gware-manage" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cmall-cart-service" options="" />
+      <module name="cmall-cart-web" options="" />
+      <module name="cmall-item-web" options="" />
+      <module name="cmall-manager-service" options="" />
+      <module name="cmall-manager-web" options="" />
+      <module name="cmall-order-service" options="" />
+      <module name="cmall-order-web" options="" />
+      <module name="cmall-passport-web" options="" />
+      <module name="cmall-payment" options="" />
+      <module name="cmall-payment-service" options="" />
+      <module name="cmall-paymnet-web" options="" />
+      <module name="cmall-search-service" options="" />
+      <module name="cmall-search-web" options="" />
+      <module name="cmall-user-service" options="" />
+      <module name="cmall-user-web" options="" />
+    </option>
+  </component>
+</project>

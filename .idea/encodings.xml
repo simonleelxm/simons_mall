@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/cmall-cart-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-cart-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-common-util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-item-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-manager-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-manager-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-order-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-order-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-parent/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-passport-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-payment/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-search-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-search-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-service-util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-user-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cmall-web-util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gware-manage/src/main/java" charset="UTF-8" />
+  </component>
+</project>
